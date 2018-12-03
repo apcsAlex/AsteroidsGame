@@ -1,13 +1,18 @@
 Spaceship bob;
-Star[] spaceSky = new Star[100];
+Star[] spaceSky = new Star[250];
+Asteroid[] astro = new Asteroid[30];
 
 public void setup()
 {
-	size(600,600);
+	size(900,600);
 	bob = new Spaceship();
   	for (int i = 0; i < spaceSky.length; i++)
   	{
   		spaceSky[i] = new Star();
+  	}
+  	for (int i = 0; i < astro.length;i++)
+  	{
+  		astro[i] = new Asteroid();
   	}
 }
 public void draw() 
@@ -16,10 +21,16 @@ public void draw()
 	for (int i = 0; i < spaceSky.length; i++)
 	{
 		spaceSky[i].show();
-
+		spaceSky[i].walk();
+	}
+	for (int i = 0; i < astro.length;i++)
+	{
+		astro[i].show();
+		astro[i].move();
 	}
 	bob.show();
 	bob.move();
+
 }
 
 public void keyPressed()
@@ -28,9 +39,10 @@ public void keyPressed()
 	{
 		bob.setDirectionX(0); 
      	bob.setDirectionY(0);
-     	bob.setX((int)(Math.random()*450)+100);
+     	bob.setX((int)(Math.random()*650)+100);
      	bob.setY((int)(Math.random()*450)+100);
      	bob.setPointDirection((int)(Math.random()*360));
+     	bob.nofire();
 	}
 	if(key == 'd')
 	{

@@ -3,7 +3,7 @@ class Spaceship extends Floater
 
   public Spaceship() 
   {
-	corners = 4;
+    corners = 4;
    	xCorners = new int[corners];
    	yCorners = new int[corners];
    	xCorners[0] = -8;
@@ -16,7 +16,7 @@ class Spaceship extends Floater
    	yCorners[3] = 0;
  
     myColor = 255;
-    myCenterX = 300;
+    myCenterX = 450;
     myCenterY = 300;
     myPointDirection = 0;
     myDirectionX = 0;
@@ -24,40 +24,40 @@ class Spaceship extends Floater
     }
   public void fire()
     {
-        corners = 7;
-        xCorners = new int[corners];
-        yCorners = new int[corners];
-    xCorners[0] = -8;
-    yCorners[0] = -8;
-    xCorners[1] = 16;
-    yCorners[1] = 0;
-    xCorners[2] = -8;
-    yCorners[2] = 8;
-    xCorners[3] = -2;
-    yCorners[3] = 0;
+      corners = 7;
+      xCorners = new int[corners];
+      yCorners = new int[corners];
+      xCorners[0] = -8;
+      yCorners[0] = -8;
+      xCorners[1] = 16;
+      yCorners[1] = 0;
+      xCorners[2] = -8;
+      yCorners[2] = 8;
+      xCorners[3] = -2;
+      yCorners[3] = 0;
 
         //fire
-        xCorners[4] = -8;
-        yCorners[4] = 3;
-        xCorners[5] = -15;
-        yCorners[5] = 0;
-        xCorners[6] = -8;
-        yCorners[6] = -3;
+      xCorners[4] = -8;
+      yCorners[4] = 5;
+      xCorners[5] = -14;
+      yCorners[5] = 1;
+      xCorners[6] = -8;
+      yCorners[6] = -3;
     }
 
   public void nofire()
     {
-        corners = 4;
-        xCorners = new int[corners];
-        yCorners = new int[corners];
-            xCorners[0] = -8;
-    yCorners[0] = -8;
-    xCorners[1] = 16;
-    yCorners[1] = 0;
-    xCorners[2] = -8;
-    yCorners[2] = 8;
-    xCorners[3] = -2;
-    yCorners[3] = 0;
+      corners = 4;
+      xCorners = new int[corners];
+      yCorners = new int[corners];
+      xCorners[0] = -8;
+      yCorners[0] = -8;
+      xCorners[1] = 16;
+      yCorners[1] = 0;
+      xCorners[2] = -8;
+      yCorners[2] = 8;
+      xCorners[3] = -2;
+      yCorners[3] = 0;
 
         
     }
