@@ -1,6 +1,7 @@
 Spaceship bob;
 Star[] spaceSky = new Star[250];
 ArrayList <Asteroid> astro;
+ArrayList <Bullet> bullet = new ArrayList <Bullet>();
 
 public void setup()
 {
@@ -11,7 +12,7 @@ public void setup()
   		spaceSky[i] = new Star();
   	}
   	astro = new ArrayList <Asteroid>();
-  	for (int i = 0; i <30 ;i++)
+  	for (int i = 0; i <50 ;i++)
   	{
   		astro.add(new Asteroid());
   	}
@@ -32,6 +33,37 @@ public void draw()
 		if (d < 23)
 				astro.remove(i);
 
+	}
+		
+
+	for(int i=0; i<bullet.size(); i++){
+		for(int a=0; a<astro.size(); a++){
+			if(dist(bullet.get(i).getX(),bullet.get(i).getY(),astro.get(a).getX(),astro.get(a).getY()) < 20){
+				astro.remove(a);
+				bullet.remove(i);
+				break;
+			}
+
+		}
+	}
+
+	for(int i=0; i<bullet.size(); i++){
+		if(bullet.get(i).getX() >= 900 || bullet.get(i).getX() <= 0){
+			bullet.remove(i);
+			break;
+		}
+	}
+
+	for(int i=0; i<bullet.size(); i++){
+		if(bullet.get(i).getY() >= 600 || bullet.get(i).getY() <= 0){
+			bullet.remove(i);
+			break;
+		}
+	}
+
+	for(Bullet bull: bullet){
+		bull.move();
+		bull.show();
 	}
 	bob.show();
 	bob.move();
@@ -65,3 +97,7 @@ public void keyPressed()
 		bob.fire();
 	}
 }
+
+public void mouseClicked(){
+	bullet.add(new Bullet(bob));
+} 

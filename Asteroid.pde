@@ -35,12 +35,12 @@ class Asteroid extends Floater{
     myPointDirection = Math.random()*360;
     if(Math.random() < 0.5){
     	myDirectionX = Math.random()*-.6;
-    	myDirectionY = Math.random()*.6;
+    	myDirectionY = Math.random()*.7;
    	}
    	else
    	{
      myDirectionX = Math.random()*-2;
-     myDirectionY = Math.random()*2;
+     myDirectionY = Math.random()*2.5;
    	}
    	myPointDirection = Math.random()*360;
    if(Math.random() < 0.5)
@@ -52,6 +52,21 @@ class Asteroid extends Floater{
  {     
    turn(myRotSpeed);
    super.move();
+     if(myCenterX > width){
+  		myCenterX = 0;
+  
+  }
+  else if (myCenterX < 0)
+    
+    myCenterX= width;
+
+  if(myCenterY > height){
+
+		myCenterY = 0;
+		}
+    else if (myCenterY < 0)
+      
+      myCenterY = height;
  }
 }
 
